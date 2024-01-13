@@ -14,7 +14,7 @@ db.init_app(app)
 # Welcome route
 @app.route('/')
 def home():
-    return make_response(jsonify({"message": "Welcome to the Home of Heroes"}), 200)
+    return make_response(jsonify({"message": "Welcome to the Home of Heroes "}), 200)
 
 # Get all heroes
 @app.route("/heroes")
