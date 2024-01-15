@@ -24,7 +24,7 @@ with app.app_context():
 
     heroes_data = [
         {"name": fake.first_name(), "super_name": fake.first_name() + " " + fake.last_name()}
-        for _ in range(20)  # Adjust the number of heroes as needed
+        for _ in range(20)
     ]
 
     for info in heroes_data:
