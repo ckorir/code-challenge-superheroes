@@ -15,7 +15,7 @@ db.init_app(app)
 # Welcome route
 @app.route('/')
 def home():
-    return "Welcome to the Super Hero API!"
+    return "Welcome to the Super Hero Home"
 
 # Get all heroes
 @app.route('/heroes', methods=['GET'])
