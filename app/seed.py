@@ -11,7 +11,6 @@ with app.app_context():
     db.session.query(Power).delete()
     db.session.commit()
 
-    print(":female_superhero: Seeding powers...")
     powers_data = [
         {"name": "super strength", "description": "gives the wielder super-human strengths"},
         {"name": "flight", "description": "gives the wielder the ability to fly through the skies at supersonic speed"},
@@ -23,7 +22,6 @@ with app.app_context():
         power = Power(**info)
         db.session.add(power)
 
-    print(":female_superhero: Seeding heroes...")
     heroes_data = [
         {"name": fake.first_name(), "super_name": fake.first_name() + " " + fake.last_name()}
         for _ in range(20)  # Adjust the number of heroes as needed
@@ -32,8 +30,6 @@ with app.app_context():
     for info in heroes_data:
         hero = Hero(**info)
         db.session.add(hero)
-
-    print(":female_superhero: Adding powers to heroes...")
 
     strengths = ["Strong", "Weak", "Average"]
     heroes = Hero.query.all()
@@ -48,4 +44,3 @@ with app.app_context():
             db.session.add(hero_power)
 
     db.session.commit()
-    print(":female_superhero: Done seeding!")
